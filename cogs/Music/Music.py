@@ -3,7 +3,7 @@
 
 import discord
 from discord.ext import commands
-from cogs.Music_helpers.Song import Song
+from cogs.Music._helpers.Song import Song
 
 class Music(commands.Cog):
 
