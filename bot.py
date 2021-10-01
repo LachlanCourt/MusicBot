@@ -5,7 +5,7 @@ from discord.ext import commands
 from cogs.GlobalConfig import GlobalConfig
 
 # Import cogs
-from cogs.Music import Music
+from cogs.Music.Music import Music
 
 # Intents give us access to some additional discord moderation features
 intents = discord.Intents.all()
