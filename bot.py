@@ -29,7 +29,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     try:
-        config.parseAll(args.configFilePath, args.roleMenuFilePath, args.lockedChannelFilePath, args.taskFilePath)
+        config.parseAll(args.configFilePath)
         client.run(config.OAuthToken)
         print('Closed')
     except Exception as e:
