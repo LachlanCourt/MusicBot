@@ -20,7 +20,7 @@ class Music(commands.Cog):
         voiceClient.play(source)
 
     @commands.command("play")
-    async def play(self, ctx, searchTerm):
+    async def play(self, ctx, *, searchTerm):
         voiceClient = ctx.guild.voice_client
 
         # Only users currently in a voice channel can add to the queue
