@@ -12,10 +12,11 @@ class Music(commands.Cog):
         self.config = config
         self.now_playing = None
         self.playlist = []
+        self.volume = 1.0
 
     def _play_song(self, voiceClient, song):
         self.now_playing = song
-        source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio(song.url), volume=1.0)
+        source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio(song.url), volume=self.volume)
         voiceClient.play(source)
 
     @commands.command("play")
@@ -32,7 +33,7 @@ class Music(commands.Cog):
                     await ctx.send("Couldn't find a video using that search term")
                     return
                 self.playlist.append(song)
-                message = await ctx.send("Added to queue.", embed=song.get_embed())
+                message = await ctx.send("Added to queue.", embed=song.getEmbed())
                 #await self._add_reaction_controls(message)
             # If the bot is not currently playing a song, start it playing straight away
             else:
@@ -47,7 +48,7 @@ class Music(commands.Cog):
                 self.playlist = []
                 voiceClient = await channel.connect()
                 self._play_song(voiceClient, song)
-                message = await ctx.send("", embed=song.get_embed())
+                message = await ctx.send("", embed=song.getEmbed())
                 #await self._add_reaction_controls(message)
         else:
             await ctx.send("You need to be in a voice channel to send this command")
