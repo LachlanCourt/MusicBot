@@ -21,7 +21,6 @@ async def on_ready():
 # Add each of the cogs, passing in the configuration
 client.add_cog(Music(client, config))
 
-
 # Start bot
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process command line arguments')
