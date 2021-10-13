@@ -24,7 +24,7 @@ This bot is designed to work either standalone, or as a submodule, hence the fun
 
 2. Add submodule
 
-        git add submodule https://github.com/LachlanCourt/MusicBot Music
+        git submodule add https://github.com/LachlanCourt/MusicBot Music
 
 3. Update gitmodules to use release branch by adding `branch = release` to gitmodules entry or run the following command from the project root
 
